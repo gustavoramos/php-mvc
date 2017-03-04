@@ -20,6 +20,8 @@ if (!$this) {
     <!-- JS -->
     <!-- Os arquivos JavaScript estão no rodapé da página _templates/footer.php -->
 
+    <link rel="shortcut icon" href="<?php echo URL; ?>public/img/favicon-php.ico" rel="stylesheet" />
+
     <!-- CSS -->
     <!-- Bootstrap -->
     <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet">

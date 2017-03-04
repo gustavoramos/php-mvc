@@ -1,5 +1,5 @@
 <?php
 
-// this file is called when user/attacker tries to look into "/application/views/" and simply gives back a 403 error.
-// this is the most simply method to prevent people from looking into a folder when mod_rewrite is not activated.
+// Este arquivo é chamado quando o usuário/atacante tenta ver "/app/views/" e simplesmente devolve um erro 403.
+// Este é o método mais simples para impedir que as pessoas olhem para uma pasta quando mod_rewrite não está ativado.
 exit(header('HTTP/1.0 403 Forbidden'));
