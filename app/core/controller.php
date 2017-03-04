@@ -15,6 +15,8 @@ class Controller
      */
     public $model = null;
 
+    public $pessoa = null;
+
     /**
      * Whenever a controller is created, open a database connection too. The idea behind is to have ONE connection
      * that can be used by multiple models (there are frameworks that open one connection per model).
@@ -23,6 +25,7 @@ class Controller
     {
         $this->openDatabaseConnection();
         $this->loadModel();
+        $this->loadPessoa();
     }
 
     /**
@@ -50,5 +53,11 @@ class Controller
         require APP . '/model/model.php';
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);
+    }
+
+    public function loadPessoa() 
+    {
+        require APP . '/model/pessoa.php';
+        $this->pessoa = new Pessoa($this->db);
     }
 }

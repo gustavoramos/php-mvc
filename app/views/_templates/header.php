@@ -20,6 +20,7 @@ if (!$this) {
     <!-- JS -->
     <!-- Os arquivos JavaScript estão no rodapé da página _templates/footer.php -->
 
+    <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo URL; ?>public/img/favicon-php.ico" rel="stylesheet" />
 
     <!-- CSS -->
@@ -37,8 +38,11 @@ if (!$this) {
           </a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active" id="new">
+          <li class="">
             <a href="<?php echo URL_WITH_INDEX_FILE; ?>songs/">Músicas</a>
+          </li>
+          <li class="">
+            <a href="<?php echo URL_WITH_INDEX_FILE; ?>pessoas/">Pessoas</a>
           </li>
         </ul>
       </div>

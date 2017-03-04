@@ -10,7 +10,7 @@
 			}
 
 			catch (PDOException $e) {
-				exit('Não foi possível estabelecer conexão com o banco de dados!')
+				exit('Não foi possível estabelecer conexão com o banco de dados!');
 			}
 		}
 
@@ -20,6 +20,22 @@
 			$query = $this->db->prepare($sql);
 			$query->execute();
 			return $query->fetchAll();
+		}
+
+		// Método que adiciona uma nova pessoa ao banco de dados 
+		public function adicionarPessoa($nome, $email) {
+			$sql = "INSERT INTO pessoa (nome, email) VALUES (:nome, :email)";
+			$query = $this->db->prepare($sql);
+			$parameters = array(':nome' => $nome, ':email' => $email);
+			$query->execute($parameters);
+		}
+
+		// Método que exclui uma pessoa do banco de dados 
+		public function excluirPessoa($pessoa_id) {
+			$sql = "DELETE FROM pessoa WHERE id = :pessoa_id";
+			$query = $this->db->prepare($sql);
+			$parameters = array(':pessoa_id' => $pessoa_id);
+			$query->execute($parameters);
 		}
 
 	}
